@@ -94,7 +94,7 @@ class GameViewController:UIViewController, MTKViewDelegate {
         // reset the vertices to default before adding animated offsets
         //vData.initializeFrom(vertexData)
         vData.initializeFrom(testTriangle.vertices)
-        
+        /*
         // Animate triangle offsets
         let lastTriVertex = 24
         let vertexSize = 4
@@ -119,6 +119,7 @@ class GameViewController:UIViewController, MTKViewDelegate {
             vData[pos] = xOffset[j]
             vData[pos+1] = yOffset[j]
         }
+        */
     }
     
     func drawInMTKView(view: MTKView) {
@@ -149,7 +150,7 @@ class GameViewController:UIViewController, MTKViewDelegate {
             renderEncoder.setRenderPipelineState(pipelineState)
             renderEncoder.setVertexBuffer(vertexBuffer, offset: 256*bufferIndex, atIndex: 0)
             renderEncoder.setVertexBuffer(vertexColorBuffer, offset:0 , atIndex: 1)
-            renderEncoder.drawPrimitives(.Triangle, vertexStart: 0, vertexCount: 9, instanceCount: 1)
+            renderEncoder.drawPrimitives(.Triangle, vertexStart: 0, vertexCount: 12, instanceCount: 1)
             
             renderEncoder.popDebugGroup()
             renderEncoder.endEncoding()
