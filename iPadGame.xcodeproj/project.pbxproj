@@ -16,6 +16,10 @@
 		D1A0E5A51CF40A0E00475952 /* BaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A0E5A41CF40A0E00475952 /* BaseObject.swift */; };
 		D1A0E5A71CF412E900475952 /* RenderableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A0E5A61CF412E900475952 /* RenderableObject.swift */; };
 		D1A0E5AB1CF4134C00475952 /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A0E5AA1CF4134C00475952 /* Cube.swift */; };
+		D1A0E5AE1CF46D9D00475952 /* IRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A0E5AD1CF46D9D00475952 /* IRenderer.swift */; };
+		D1A0E5B01CF46DCC00475952 /* MetalRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A0E5AF1CF46DCC00475952 /* MetalRenderer.swift */; };
+		D1A0E5B21CF49D5200475952 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A0E5B11CF49D5200475952 /* Camera.swift */; };
+		D1A0E5B61CF4A6FD00475952 /* OpenGLRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A0E5B51CF4A6FD00475952 /* OpenGLRenderer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		D1A0E5A41CF40A0E00475952 /* BaseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseObject.swift; sourceTree = "<group>"; };
 		D1A0E5A61CF412E900475952 /* RenderableObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderableObject.swift; sourceTree = "<group>"; };
 		D1A0E5AA1CF4134C00475952 /* Cube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
+		D1A0E5AD1CF46D9D00475952 /* IRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRenderer.swift; sourceTree = "<group>"; };
+		D1A0E5AF1CF46DCC00475952 /* MetalRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalRenderer.swift; sourceTree = "<group>"; };
+		D1A0E5B11CF49D5200475952 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		D1A0E5B51CF4A6FD00475952 /* OpenGLRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenGLRenderer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,11 +77,47 @@
 				D1A0E5991CF4012100475952 /* Assets.xcassets */,
 				D1A0E59B1CF4012100475952 /* LaunchScreen.storyboard */,
 				D1A0E59E1CF4012100475952 /* Info.plist */,
-				D1A0E5A41CF40A0E00475952 /* BaseObject.swift */,
-				D1A0E5A61CF412E900475952 /* RenderableObject.swift */,
-				D1A0E5AA1CF4134C00475952 /* Cube.swift */,
+				D1A0E5AC1CF46D8300475952 /* Objects */,
+				D1A0E5B31CF4A6DE00475952 /* Renderer */,
 			);
 			path = iPadGame;
+			sourceTree = "<group>";
+		};
+		D1A0E5AC1CF46D8300475952 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				D1A0E5A41CF40A0E00475952 /* BaseObject.swift */,
+				D1A0E5B11CF49D5200475952 /* Camera.swift */,
+				D1A0E5AA1CF4134C00475952 /* Cube.swift */,
+				D1A0E5A61CF412E900475952 /* RenderableObject.swift */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		D1A0E5B31CF4A6DE00475952 /* Renderer */ = {
+			isa = PBXGroup;
+			children = (
+				D1A0E5AD1CF46D9D00475952 /* IRenderer.swift */,
+				D1A0E5B41CF4A6E800475952 /* MetalRenderer */,
+				D1A0E5B71CF4A70700475952 /* OpenGLRenderer */,
+			);
+			name = Renderer;
+			sourceTree = "<group>";
+		};
+		D1A0E5B41CF4A6E800475952 /* MetalRenderer */ = {
+			isa = PBXGroup;
+			children = (
+				D1A0E5AF1CF46DCC00475952 /* MetalRenderer.swift */,
+			);
+			name = MetalRenderer;
+			sourceTree = "<group>";
+		};
+		D1A0E5B71CF4A70700475952 /* OpenGLRenderer */ = {
+			isa = PBXGroup;
+			children = (
+				D1A0E5B51CF4A6FD00475952 /* OpenGLRenderer.swift */,
+			);
+			name = OpenGLRenderer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,12 +192,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1A0E5B01CF46DCC00475952 /* MetalRenderer.swift in Sources */,
 				D1A0E5A71CF412E900475952 /* RenderableObject.swift in Sources */,
+				D1A0E5AE1CF46D9D00475952 /* IRenderer.swift in Sources */,
 				D1A0E5951CF4012100475952 /* Shaders.metal in Sources */,
 				D1A0E5A51CF40A0E00475952 /* BaseObject.swift in Sources */,
 				D1A0E5931CF4012100475952 /* GameViewController.swift in Sources */,
 				D1A0E5AB1CF4134C00475952 /* Cube.swift in Sources */,
 				D1A0E5911CF4012100475952 /* AppDelegate.swift in Sources */,
+				D1A0E5B21CF49D5200475952 /* Camera.swift in Sources */,
+				D1A0E5B61CF4A6FD00475952 /* OpenGLRenderer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
