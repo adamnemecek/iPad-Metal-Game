@@ -11,14 +11,14 @@ import simd
 
 class BaseObject:NSObject
 {
-    var worldPosition:float3;
+    //var worldPosition:float3;
     
-    override init()
-    {
-        worldPosition = float3.init(x:0.0, y:0.0, z:0.0)
+    //override init()
+    //{
+        //worldPosition = float3.init(x:0.0, y:0.0, z:0.0)
         
-        super.init()
-    }
+    //    super.init()
+    //}
     
 }
 

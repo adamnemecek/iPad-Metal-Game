@@ -14,6 +14,8 @@
 		D1A0E59A1CF4012100475952 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1A0E5991CF4012100475952 /* Assets.xcassets */; };
 		D1A0E59D1CF4012100475952 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1A0E59B1CF4012100475952 /* LaunchScreen.storyboard */; };
 		D1A0E5A51CF40A0E00475952 /* BaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A0E5A41CF40A0E00475952 /* BaseObject.swift */; };
+		D1A0E5A71CF412E900475952 /* RenderableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A0E5A61CF412E900475952 /* RenderableObject.swift */; };
+		D1A0E5AB1CF4134C00475952 /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A0E5AA1CF4134C00475952 /* Cube.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		D1A0E59C1CF4012100475952 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1A0E59E1CF4012100475952 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1A0E5A41CF40A0E00475952 /* BaseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseObject.swift; sourceTree = "<group>"; };
+		D1A0E5A61CF412E900475952 /* RenderableObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderableObject.swift; sourceTree = "<group>"; };
+		D1A0E5AA1CF4134C00475952 /* Cube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				D1A0E59B1CF4012100475952 /* LaunchScreen.storyboard */,
 				D1A0E59E1CF4012100475952 /* Info.plist */,
 				D1A0E5A41CF40A0E00475952 /* BaseObject.swift */,
+				D1A0E5A61CF412E900475952 /* RenderableObject.swift */,
+				D1A0E5AA1CF4134C00475952 /* Cube.swift */,
 			);
 			path = iPadGame;
 			sourceTree = "<group>";
@@ -142,9 +148,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1A0E5A71CF412E900475952 /* RenderableObject.swift in Sources */,
 				D1A0E5951CF4012100475952 /* Shaders.metal in Sources */,
 				D1A0E5A51CF40A0E00475952 /* BaseObject.swift in Sources */,
 				D1A0E5931CF4012100475952 /* GameViewController.swift in Sources */,
+				D1A0E5AB1CF4134C00475952 /* Cube.swift in Sources */,
 				D1A0E5911CF4012100475952 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

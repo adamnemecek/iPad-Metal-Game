@@ -13,36 +13,6 @@ import MetalKit
 let MaxBuffers = 3
 let ConstantBufferSize = 1024*1024
 
-let vertexData:[Float] =
-[
-    -1.0, -1.0, 0.0, 1.0,
-    -1.0,  1.0, 0.0, 1.0,
-    1.0, -1.0, 0.0, 1.0,
-    
-    1.0, -1.0, 0.0, 1.0,
-    -1.0,  1.0, 0.0, 1.0,
-    1.0,  1.0, 0.0, 1.0,
-    
-    -0.0, 0.25, 0.0, 1.0,
-    -0.25, -0.25, 0.0, 1.0,
-    0.25, -0.25, 0.0, 1.0
-]
-
-let vertexColorData:[Float] =
-[
-    0.0, 0.0, 1.0, 1.0,
-    0.0, 0.0, 1.0, 1.0,
-    0.0, 0.0, 1.0, 1.0,
-    
-    0.0, 0.0, 1.0, 1.0,
-    0.0, 0.0, 1.0, 1.0,
-    0.0, 0.0, 1.0, 1.0,
-    
-    0.0, 0.0, 1.0, 1.0,
-    0.0, 1.0, 0.0, 1.0,
-    1.0, 0.0, 0.0, 1.0
-]
-
 class GameViewController:UIViewController, MTKViewDelegate {
     
     var device: MTLDevice! = nil
@@ -60,6 +30,8 @@ class GameViewController:UIViewController, MTKViewDelegate {
     var yOffset:[Float] = [ 1.0, 0.0, -1.0 ]
     var xDelta:[Float] = [ 0.002, -0.001, 0.003 ]
     var yDelta:[Float] = [ 0.001,  0.002, -0.001 ]
+    
+    let testTriangle = Cube()
     
     override func viewDidLoad() {
         
@@ -107,8 +79,9 @@ class GameViewController:UIViewController, MTKViewDelegate {
         vertexBuffer = device.newBufferWithLength(ConstantBufferSize, options: [])
         vertexBuffer.label = "vertices"
         
-        let vertexColorSize = vertexData.count * sizeofValue(vertexColorData[0])
-        vertexColorBuffer = device.newBufferWithBytes(vertexColorData, length: vertexColorSize, options: [])
+        //let vertexColorSize = vertexColorData.count * sizeofValue(vertexColorData[0])
+        let vertexColorSize = testTriangle.colorData.count * sizeofValue(testTriangle.colorData[0])
+        vertexColorBuffer = device.newBufferWithBytes(testTriangle.colorData, length: vertexColorSize, options: [])
         vertexColorBuffer.label = "colors"
     }
     
@@ -119,7 +92,8 @@ class GameViewController:UIViewController, MTKViewDelegate {
         let vData = UnsafeMutablePointer<Float>(pData + 256*bufferIndex)
         
         // reset the vertices to default before adding animated offsets
-        vData.initializeFrom(vertexData)
+        //vData.initializeFrom(vertexData)
+        vData.initializeFrom(testTriangle.vertices)
         
         // Animate triangle offsets
         let lastTriVertex = 24
