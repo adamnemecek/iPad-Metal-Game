@@ -23,7 +23,12 @@ class GameViewController:UIViewController, MTKViewDelegate {
     let inflightSemaphore = dispatch_semaphore_create(MaxBuffers)
     var bufferIndex = 0
     
-    var baseAttributes : BaseAttributes! = nil
+    //TEST CODE
+    var character : BaseCharacter = BaseCharacter()
+    var skill : BaseSkill = BaseSkill()
+    var battleSystem : BattleSystem = BattleSystem()
+    
+    
     
     // offsets used in animation
     //var xOffset:[Float] = [ -1.0, 1.0, -1.0 ]
@@ -38,20 +43,23 @@ class GameViewController:UIViewController, MTKViewDelegate {
         super.viewDidLoad()
         
         renderer = MetalRenderer()
-        baseAttributes = BaseAttributes()
         
         renderer.Init(self.view)
         //view.delegate = self
-        baseAttributes.StartTimer()
         
         timer = CADisplayLink(target: self, selector: #selector(GameViewController.gameLoop))
         timer.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSDefaultRunLoopMode)
         
         loadAssets()
+        
+        var battleCommand : BattleCommand! = nil
+        battleCommand = BattleCommand(characterToUse: character, skillToUse: skill)
+        battleSystem.AddBattleCommnad(battleCommand)
     }
     
     func gameLoop()
     {
+        battleSystem.DebugPrint()
         autoreleasepool
         {
             renderer.Render()

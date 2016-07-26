@@ -10,13 +10,28 @@ import Foundation
 
 class BaseAttributes
 {
-    var attackDelay : Float = 2.0
-    var timer : NSTimer! = nil
+    var attackDelay : Float
+    var health : Int
+    var strength : Int
+    var vitality : Int
     
-    func StartTimer()
+    
+    
+    internal init()
     {
-        timer = NSTimer.scheduledTimerWithTimeInterval(Double(attackDelay), target: self, selector: #selector(BaseAttributes.DebugPrint), userInfo: nil, repeats: true)
+        attackDelay = 2.0
+        health = 30
+        strength = 2
+        vitality = 2
+        
     }
+    
+    //var timer : NSTimer! = nil
+    
+    //func StartTimer()
+    //{
+    //    timer = NSTimer.scheduledTimerWithTimeInterval(Double(attackDelay), target: self, selector: #selector(BaseAttributes.DebugPrint), userInfo: nil, repeats: true)
+    //}
     
     func GetAttackDelay() -> Float
     {
@@ -28,8 +43,8 @@ class BaseAttributes
         attackDelay = delay
     }
     
-    @objc func DebugPrint ()
-    {
-        print ("Attacked")
-    }
+    //@objc func DebugPrint ()
+    //{
+    //    print ("Attacked")
+    //}
 }
