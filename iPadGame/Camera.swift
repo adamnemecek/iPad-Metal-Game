@@ -17,8 +17,13 @@ class Camera : BaseObject
     
     override init()
     {
-        viewMatrix = float4x4.Clear()
-        projectionMatrix = float4x4.Clear()
-        worldMatrix = float4x4.Clear()
+        viewMatrix = float4x4.init()
+        projectionMatrix = float4x4.init()
+        worldMatrix = float4x4.init()
+    }
+    
+    func UpdateCameraMatrix()
+    {
+        
     }
 }

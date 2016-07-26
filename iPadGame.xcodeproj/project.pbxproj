@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D18660921D47013D0047B265 /* BaseAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18660911D47013D0047B265 /* BaseAttributes.swift */; };
 		D1A0E5911CF4012100475952 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A0E5901CF4012100475952 /* AppDelegate.swift */; };
 		D1A0E5931CF4012100475952 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A0E5921CF4012100475952 /* GameViewController.swift */; };
 		D1A0E5951CF4012100475952 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = D1A0E5941CF4012100475952 /* Shaders.metal */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D18660911D47013D0047B265 /* BaseAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAttributes.swift; sourceTree = "<group>"; };
 		D1A0E58D1CF4012100475952 /* iPadGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPadGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1A0E5901CF4012100475952 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1A0E5921CF4012100475952 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +53,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D18660901D4701070047B265 /* Attributes */ = {
+			isa = PBXGroup;
+			children = (
+				D18660911D47013D0047B265 /* BaseAttributes.swift */,
+			);
+			name = Attributes;
+			sourceTree = "<group>";
+		};
 		D1A0E5841CF4012100475952 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +87,7 @@
 				D1A0E5991CF4012100475952 /* Assets.xcassets */,
 				D1A0E59B1CF4012100475952 /* LaunchScreen.storyboard */,
 				D1A0E59E1CF4012100475952 /* Info.plist */,
+				D18660901D4701070047B265 /* Attributes */,
 				D1A0E5AC1CF46D8300475952 /* Objects */,
 				D1A0E5B31CF4A6DE00475952 /* Renderer */,
 			);
@@ -194,6 +205,7 @@
 			files = (
 				D1A0E5B01CF46DCC00475952 /* MetalRenderer.swift in Sources */,
 				D1A0E5A71CF412E900475952 /* RenderableObject.swift in Sources */,
+				D18660921D47013D0047B265 /* BaseAttributes.swift in Sources */,
 				D1A0E5AE1CF46D9D00475952 /* IRenderer.swift in Sources */,
 				D1A0E5951CF4012100475952 /* Shaders.metal in Sources */,
 				D1A0E5A51CF40A0E00475952 /* BaseObject.swift in Sources */,
@@ -361,6 +373,7 @@
 				D1A0E5A31CF4012100475952 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

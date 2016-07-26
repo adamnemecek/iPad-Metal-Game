@@ -7,15 +7,17 @@
 //
 
 import Foundation
+import UIKit
 
 class IRenderer
 {
-    func Init()
+    func Init(view: UIView!)
     {
         
     }
     
-    func CreateVertexBuffer()
+    
+    func CreateVertexBuffer(vertexData:[Float])
     {
         
     }

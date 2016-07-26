@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 class OpenGLRenderer : IRenderer
 {
-    override func Init()
+    override func Init(view : UIView!)
     {
         
     }
