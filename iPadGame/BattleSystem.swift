@@ -12,12 +12,6 @@ struct BattleCommand
 {
     var characterToUse : BaseCharacter
     var skillToUse : BaseSkill
-    
-    //func CreateBattleCommand (character : BaseCharacter, skill : BaseSkill)
-    //{
-     //   characterToUse = character
-      //  skillToUse = skill
-    //}
 }
 
 public class BattleSystem

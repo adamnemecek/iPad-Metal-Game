@@ -9,21 +9,18 @@
 import Foundation
 import UIKit
 
-class IRenderer
+class IRenderer : NSObject
 {
-    func Init(view: UIView!)
-    {
-        
-    }
     
     
-    func CreateVertexBuffer(vertexData:[Float])
-    {
-        
-    }
     
-    func Render()
-    {
-        
-    }
+    //func CreateVertexBuffer(vertexData:[Float])
+    //{
+    //
+    //}
+    
+    //func Render()
+    //{
+    //
+    //}
 }

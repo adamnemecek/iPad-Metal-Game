@@ -16,6 +16,7 @@ let ConstantBufferSize = 1024*1024
 class GameViewController:UIViewController, MTKViewDelegate {
     
     var renderer : IRenderer! = nil
+    //var renderer : MetalRenderer! = nil
     var timer : CADisplayLink! = nil
     
     var vertexColorBuffer: MTLBuffer! = nil
@@ -42,9 +43,12 @@ class GameViewController:UIViewController, MTKViewDelegate {
         
         super.viewDidLoad()
         
-        renderer = MetalRenderer()
+        //renderer = MetalRenderer()
         
-        renderer.Init(self.view)
+        let metalView = self.view as! MTKView
+        renderer = MetalRenderer(mtkView:metalView)
+        
+        //renderer.Init(self.view)
         //view.delegate = self
         
         timer = CADisplayLink(target: self, selector: #selector(GameViewController.gameLoop))
@@ -60,10 +64,6 @@ class GameViewController:UIViewController, MTKViewDelegate {
     func gameLoop()
     {
         battleSystem.DebugPrint()
-        autoreleasepool
-        {
-            renderer.Render()
-        }
     }
     
     func loadAssets() {

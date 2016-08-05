@@ -11,8 +11,8 @@ import UIKit
 
 class OpenGLRenderer : IRenderer
 {
-    override func Init(view : UIView!)
-    {
+    //override func Init(inout view : UIView!)
+    //{
         
-    }
+    //}
 }

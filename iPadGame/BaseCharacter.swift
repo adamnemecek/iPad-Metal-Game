@@ -8,16 +8,24 @@
 
 import Foundation
 
-class BaseCharacter : BaseAttributes
+class BaseCharacter : RenderableObject
 {
-    var renderableObjectComponent : RenderableObject
+    //Components
+    var attributesComponent : BaseAttributes
     
+    //Character specific attributes
+    var health : Int
+    var job : BaseJob! = nil
     var name : String
+    var mana : Int
     
-    override internal init()
+    
+    override init()
     {
-        renderableObjectComponent = RenderableObject()
+        attributesComponent = BaseAttributes()
         name = "Name"
+        health = 30
+        mana = 15
         
         super.init()
     }
