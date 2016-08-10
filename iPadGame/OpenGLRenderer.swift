@@ -11,8 +11,19 @@ import UIKit
 
 class OpenGLRenderer : IRenderer
 {
-    //override func Init(inout view : UIView!)
-    //{
+    
+    override func AddRenderableObjectData (object:RenderableObject)
+    {
         
-    //}
+    }
+    
+    override func AddToVertexBuffer (vertexData:UnsafeMutablePointer<Float>, count:Int)
+    {
+        
+    }
+    
+    override internal func CreateBuffers()
+    {
+        
+    }
 }

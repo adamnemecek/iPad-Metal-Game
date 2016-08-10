@@ -7,12 +7,32 @@
 //
 
 import Foundation
-import UIKit
+import simd
+
+/*
+struct Constants
+{
+    var mvpMatrix = matrix_identity_float4x4
+    var normalMatrix = matrix_identity_float3x3
+}
+*/
 
 class IRenderer : NSObject
 {
+    func AddRenderableObjectData (object:RenderableObject)
+    {
+        
+    }
     
+    func AddToVertexBuffer (vertexData:UnsafeMutablePointer<Float>, count:Int)
+    {
+        
+    }
     
+    internal func CreateBuffers()
+    {
+        
+    }
     
     //func CreateVertexBuffer(vertexData:[Float])
     //{

@@ -10,25 +10,39 @@
 
 using namespace metal;
 
-struct VertexInOut
+struct Constants
 {
-    float4  position [[position]];
-    float4  color;
+    float4x4 mvp;
+    float3x3 normalMatrix;
 };
 
-vertex VertexInOut passThroughVertex(uint vid [[ vertex_id ]],
-                                     constant packed_float4* position  [[ buffer(0) ]],
-                                     constant packed_float4* color    [[ buffer(1) ]])
+struct Vertex_PositionNormalColor_In
 {
-    VertexInOut outVertex;
+    float3  position [[attribute(0)]];
+    float4  color [[attribute(1)]];
+    float3  normal [[attribute(2)]];
+};
+
+struct Vertex_PositionNormalColor_Out
+{
+    float4 position [[position]];
+    float4 color;
+    float3 normal;
+};
+
+vertex Vertex_PositionNormalColor_Out passThroughVertex(Vertex_PositionNormalColor_In inVertex [[stage_in]], constant Constants &uniforms [[buffer(1)]])
+{
+    Vertex_PositionNormalColor_Out outVertex;
+    //Vertex_PositionNormalColor_In inVertex = vertices[vertexID];
     
-    outVertex.position = position[vid];
-    outVertex.color    = color[vid];
+    outVertex.position = uniforms.mvp * float4(inVertex.position, 1);
+    outVertex.normal = inVertex.normal;
+    outVertex.color = inVertex.color;
     
     return outVertex;
 };
 
-fragment half4 passThroughFragment(VertexInOut inFrag [[stage_in]])
+fragment half4 passThroughFragment(Vertex_PositionNormalColor_Out inFrag [[stage_in]])
 {
     return half4(inFrag.color);
 };
